@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_tabungan"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tvJml"
+        android:layout_width="109dp"
+        android:layout_height="85dp"
+        android:layout_marginEnd="40dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Rp.0,-"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvKeterangan"
+        app:layout_constraintTop_toBottomOf="@+id/tvTgl" />
+
+    <TextView
+        android:id="@+id/tvTgl"
+        android:layout_width="413dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center|start"
+        android:paddingStart="10dp"
+        android:text="15-09-2020"
+        android:textAlignment="textStart"
+        android:textColor="#121111"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvKeterangan"
+        android:layout_width="231dp"
+        android:layout_height="84dp"
+        android:gravity="center_vertical"
+        android:paddingStart="10dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTgl" />
+
+    <ImageButton
+        android:id="@+id/btnDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvJml"
+        app:layout_constraintTop_toBottomOf="@+id/btnEdit"
+        app:srcCompat="@drawable/ic_baseline_delete_24"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/btnEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvJml"
+        app:layout_constraintTop_toBottomOf="@+id/tvTgl"
+        app:srcCompat="@drawable/ic_baseline_edit_24"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="0.3dp"
+        android:background="#6E6969"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="127dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

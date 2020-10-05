@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/bg"
+    android:layout_height="match_parent"
+    tools:context=".View.Register2Fragment">
+
+
+
+    <TextView
+        android:id="@+id/back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/step_2"
+        android:textSize="20dp"
+        android:textColor="#000"
+        android:drawableStart="@drawable/ic_back"
+        android:padding="50dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        tools:context=".MainFragment">
+
+        <TextView
+            android:id="@+id/tvHalo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/teks"
+            android:textColor="#000"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            />
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="30dp"
+            android:textColor="#000000"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/border_grey"
+            android:hint="@string/email"
+            android:padding="10dp"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/edPassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/border_grey"
+            android:hint="@string/password"
+            android:textColor="#000000"
+            android:padding="10dp"
+            android:inputType="textPassword"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/edConfirmPass"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            android:textColor="#000000"
+            android:background="@drawable/border_grey"
+            android:hint="@string/confirmation_password"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnFinish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/background_blue"
+            android:text="@string/done"
+            android:textColor="#fff" />
+
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

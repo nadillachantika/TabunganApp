@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/berandaFragment"
+        android:icon="@drawable/ic_home_white"
+        android:title="@string/beranda"
+
+        />
+
+    <item
+        android:id="@+id/tabunganFragment"
+        android:icon="@drawable/ic_income"
+        android:title="@string/tabungan" />
+
+<!--    <item-->
+<!--        android:id="@+id/pengeluaranFragment"-->
+<!--        android:icon="@drawable/ic_pengeluaran"-->
+<!--        android:title="@string/pengeluaran"-->
+<!--        />-->
+</menu>
