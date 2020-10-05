@@ -17,10 +17,7 @@ class SessionManager(var context: Context) {
     init{
         pref = context.getSharedPreferences(PREF_NAME,0)
         editor = pref?.edit()
-
-
     }
-
     var login: Boolean?
     get() = pref?.getBoolean(ISLOGIN,false)
     set(login){

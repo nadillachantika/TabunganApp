@@ -10,6 +10,7 @@ import com.nadillla.tabunganapp.Repository.UserRepository
 
 class UserViewModel(application: Application):AndroidViewModel(application) {
 
+
     val repoUser = UserRepository(application.applicationContext)
     var responseDataUser = MutableLiveData<List<User>>()
     var _responseDataUser : LiveData<List<User>> =responseDataUser
@@ -19,6 +20,9 @@ class UserViewModel(application: Application):AndroidViewModel(application) {
 
     var isErrorUser = MutableLiveData<Throwable>()
     var _isErrorUser : LiveData<Throwable> = isErrorUser
+
+
+
 
 
 

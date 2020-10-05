@@ -26,14 +26,8 @@ class Home2Activity : AppCompatActivity() {
         setTitle(session.nama)
 
 
-
         val navController  = Navigation.findNavController(this,R.id.home_nav_host_fragment)
         NavigationUI.setupWithNavController(bottomNavigation, navController)
-
-
-
-
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -51,7 +45,6 @@ class Home2Activity : AppCompatActivity() {
                setTitle("Keluar")
                setMessage("Yakin ingin keluar ?")
                setCancelable(false)
-
                setPositiveButton("Yakin") { dialogInterface, i ->
                    session.logout()
                    val intent = Intent(applicationContext, MainActivity::class.java)
@@ -68,8 +61,4 @@ class Home2Activity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-
-
-
-
 }

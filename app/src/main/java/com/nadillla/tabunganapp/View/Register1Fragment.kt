@@ -3,6 +3,7 @@ package com.nadillla.tabunganapp.View
 import android.os.Bundle
 import android.text.method.TextKeyListener.clear
 import android.util.Log
+import android.util.Patterns
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -54,6 +55,7 @@ class Register1Fragment : Fragment(), View.OnClickListener {
 
     private fun emptyUser(it: Throwable?) {
         Log.d("TAG", "Lanjut register, email belum ada")
+
         val bundle = bundleOf(
             "name" to edName.text.toString(),
             "email" to edEmail.text.toString()
@@ -76,13 +78,26 @@ class Register1Fragment : Fragment(), View.OnClickListener {
                     edName.error = "Nama tidak boleh kosong"
                 } else if (edEmail.text.toString().isEmpty()) {
                     edEmail.error = "Email tidak boleh kosong"
-                } else {
 
-                    userViewModel.gotEmail(edEmail.text.toString())
+                } else {
+                    validasiEmail()
+                    if (validasiEmail() == true) {
+                        userViewModel.gotEmail(edEmail.text.toString())
+                    }
 
                 }
 
             R.id.btnBack -> activity?.onBackPressed()
+        }
+    }
+
+    private fun validasiEmail(): Boolean {
+        var Email: String = edEmail.text.toString()
+        if (Patterns.EMAIL_ADDRESS.matcher(Email).matches()) {
+            return true
+        } else {
+            edEmail.error = "Masukkan alamat email"
+            return false
         }
     }
 
