@@ -16,10 +16,11 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-        finish()
-
-    }
+//    override fun onBackPressed() {
+//
+//        super.onBackPressed()
+//        supportFinishAfterTransition()
+//
+//    }
 
 }
