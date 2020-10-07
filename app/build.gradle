@@ -90,4 +90,6 @@ dependencies {
 
     implementation "androidx.fragment:fragment:1.2.4"
 
+    implementation 'com.wang.avi:library:2.1.3'
+
 }
