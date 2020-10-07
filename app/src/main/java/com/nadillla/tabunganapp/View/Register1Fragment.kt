@@ -1,23 +1,22 @@
 package com.nadillla.tabunganapp.View
 
 import android.os.Bundle
-import android.text.method.TextKeyListener.clear
 import android.util.Log
 import android.util.Patterns
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import com.nadillla.tabunganapp.Helper.SessionManager
 import com.nadillla.tabunganapp.R
 import com.nadillla.tabunganapp.ViewModel.UserViewModel
 import kotlinx.android.synthetic.main.fragment_register1.*
-import kotlinx.android.synthetic.main.fragment_register2.*
 
 class Register1Fragment : Fragment(), View.OnClickListener {
 
@@ -100,5 +99,23 @@ class Register1Fragment : Fragment(), View.OnClickListener {
             return false
         }
     }
+//    fun clearStack()
+//    {
+//        val backStackEntry = supportFragmentManager.backStackEntryCount
+//        if (backStackEntry > 0) {
+//            for (i in 0 until backStackEntry) {
+//                supportFragmentManager.popBackStackImmediate()
+//            }
+//        }
+//        if (supportFragmentManager.fragments.size > 0) {
+//            supportFragmentManager.fragments.forEach {
+//                if (it != null) {
+//                    supportFragmentManager.beginTransaction().remove(it).commit()
+//                }
+//            }
+//        }
+//    }
+
+
 
 }

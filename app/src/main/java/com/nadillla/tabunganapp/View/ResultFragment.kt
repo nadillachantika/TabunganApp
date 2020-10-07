@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.nadillla.tabunganapp.R
+import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.fragment_register2.back
 import kotlinx.android.synthetic.main.fragment_result.*
 
@@ -52,8 +53,6 @@ class ResultFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v?.id){
             R.id.btnBackToLogin->navController.navigate(R.id.action_resultFragment_to_mainFragment)
-
-
                 R.id.back->  activity?.onBackPressed()
 
         }

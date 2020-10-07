@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.nadillla.tabunganapp.Local.User
 import com.nadillla.tabunganapp.R
@@ -97,8 +98,12 @@ class MainFragment  : Fragment(), View.OnClickListener {
                     userViewModel.loginUser(edEmail.text.toString(),edPassword.text.toString())
                 }
 
+
         }
     }
+
+
+
 
 
 
