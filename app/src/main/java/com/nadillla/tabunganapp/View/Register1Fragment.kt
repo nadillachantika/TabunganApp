@@ -1,5 +1,6 @@
 package com.nadillla.tabunganapp.View
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
@@ -35,6 +36,7 @@ class Register1Fragment : Fragment(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -43,7 +45,7 @@ class Register1Fragment : Fragment(), View.OnClickListener {
         btnNext.setOnClickListener(this)
         btnBack.setOnClickListener(this)
 
-        attachObserve()
+//        attachObserve()
     }
 
     private fun attachObserve() {
@@ -59,7 +61,11 @@ class Register1Fragment : Fragment(), View.OnClickListener {
             "name" to edName.text.toString(),
             "email" to edEmail.text.toString()
         )
+//        navController.popBackStack(R.id.register2Fragment, true)
+
         navController.navigate(R.id.action_register1Fragment_to_register2Fragment, bundle)
+
+
     }
 
     private fun gotUser() {
@@ -81,7 +87,16 @@ class Register1Fragment : Fragment(), View.OnClickListener {
                 } else {
                     validasiEmail()
                     if (validasiEmail() == true) {
-                        userViewModel.gotEmail(edEmail.text.toString())
+//                        userViewModel.gotEmail(edEmail.text.toString())
+                        val bundle = bundleOf(
+                            "name" to edName.text.toString(),
+                            "email" to edEmail.text.toString()
+                        )
+                        navController.navigate(
+                            R.id.action_register1Fragment_to_register2Fragment,
+                            bundle
+                        )
+
                     }
 
                 }
@@ -115,7 +130,6 @@ class Register1Fragment : Fragment(), View.OnClickListener {
 //            }
 //        }
 //    }
-
 
 
 }

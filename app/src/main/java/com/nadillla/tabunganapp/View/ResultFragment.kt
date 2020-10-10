@@ -52,7 +52,13 @@ class ResultFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         when(v?.id){
-            R.id.btnBackToLogin->navController.navigate(R.id.action_resultFragment_to_mainFragment)
+            R.id.btnBackToLogin->{
+
+
+//                navController.popBackStack(R.id.resultFragment, true)
+
+                navController.navigate(R.id.mainFragment)
+            }
                 R.id.back->  activity?.onBackPressed()
 
         }

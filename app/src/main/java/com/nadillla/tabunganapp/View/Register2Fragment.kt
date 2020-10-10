@@ -32,7 +32,7 @@ class Register2Fragment : Fragment(), View.OnClickListener {
 
     var get_name: String? = null
     var get_email: String? = null
-    var get_password:String?= null
+    var get_password: String? = null
 
 
     override fun onCreateView(
@@ -56,6 +56,7 @@ class Register2Fragment : Fragment(), View.OnClickListener {
         get_password = arguments?.getString("password")
 
 
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -63,7 +64,7 @@ class Register2Fragment : Fragment(), View.OnClickListener {
         btnFinish.setOnClickListener(this)
         back.setOnClickListener(this)
         tvHalo.text = "Halo $get_name, untuk melanjutkan register silahkan isi password dibawah"
-        tvEmail.text=get_email
+        tvEmail.text = get_email
 
 
         attachObserve()
@@ -71,50 +72,47 @@ class Register2Fragment : Fragment(), View.OnClickListener {
     }
 
     private fun attachObserve() {
-        userViewModel._responseActionUser.observe(viewLifecycleOwner, Observer { registUser() })
-        userViewModel._isErrorUser.observe(viewLifecycleOwner, Observer { errorRegister(it) })
+        //register
+//        userViewModel._responseActionUser.observe(viewLifecycleOwner, Observer { registUser() })
+//        userViewModel._isErrorUser.observe(viewLifecycleOwner, Observer { errorRegister(it) })
+
+        //cek email
+        userViewModel._responseActionUser.observe(viewLifecycleOwner, Observer { cekEmail() })
+        userViewModel._isErrorUser.observe(viewLifecycleOwner, Observer { errorEmail() })
+
     }
 
-    private fun registUser() {
-        Toast.makeText(context, "Register berhasil", Toast.LENGTH_SHORT).show()
+    private fun errorEmail() {
+
+
+        userViewModel.registerUser(
+            null,
+            get_name.toString(),
+            get_email.toString(),
+            edPassword.text.toString(),
+            edConfirmPass.text.toString()
+        )
+
         val bundle = bundleOf(
             "password" to edPassword.text.toString(),
             "email" to tvEmail.text.toString()
         )
         navController.navigate(R.id.action_register2Fragment_to_resultFragment, bundle)
-
     }
 
-    private fun errorRegister(it: Throwable?) {
-        Toast.makeText(context, "Register gagal", Toast.LENGTH_SHORT).show()
-        Log.d("TAG", "errorRegister: gagal ${it?.message}")
-
+    private fun cekEmail() {
+        Toast.makeText(context, "Register gagal, Email sudah terdaftar", Toast.LENGTH_SHORT).show()
     }
 
 
     override fun onClick(v: View?) {
         when (v?.id) {
-            R.id.btnFinish -> registerUser()
-
+            R.id.btnFinish -> userViewModel.gotEmail(get_email.toString())
             R.id.back -> activity?.onBackPressed()
         }
 
     }
 
-    private fun registerUser() {
-        if (edPassword.text.toString().isEmpty()) {
-            edPassword.error = "Password tidak boleh kosong"
-        } else if (edConfirmPass.text.toString().isEmpty()) {
-            edConfirmPass.error = "Konfirmasi password"
-        } else {
-            userViewModel.registerUser(
-                null,
-                get_name.toString(),
-                get_email.toString(),
-                edPassword.text.toString(),
-                edConfirmPass.text.toString()
-            )
-        }
-    }
-
 }
+
+

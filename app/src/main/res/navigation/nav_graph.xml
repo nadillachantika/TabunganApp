@@ -52,11 +52,7 @@
         android:id="@+id/resultFragment"
         android:name="com.nadillla.tabunganapp.View.ResultFragment"
         android:label="fragment_result"
-        tools:layout="@layout/fragment_result" >
-        <action
-            android:id="@+id/action_resultFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_result" />
     <activity
         android:id="@+id/home2Activity"
         android:name="com.nadillla.tabunganapp.Home.Home2Activity"

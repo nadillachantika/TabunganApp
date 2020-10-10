@@ -46,10 +46,14 @@ class MainFragment  : Fragment(), View.OnClickListener {
         navController = Navigation.findNavController(view)
         btnRegistermain.setOnClickListener(this)
         btnLogin.setOnClickListener(this)
+//        navController.popBackStack(R.id.mainFragment, true)
+
+
 
 
         attachObserve()
     }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
